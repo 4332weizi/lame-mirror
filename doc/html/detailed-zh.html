@@ -32,253 +32,225 @@
 <div id="content">
     <div align="center">
         <img src="images/logo.gif" width="358" height="231" alt="LAME Official Logo" />
-        <h2 class="hilight">Detailed command line switches</h2>
+        <h2 class="hilight">命令行选项说明</h2>
     </div>
-    <h3>Options ordered by feature</h3>
+    <h3>Options按功能排序</h3>
     <table class="settings" cellpadding="4">
         <tr>
-            <th style="width:20%">Setting</th>
-            <th>Brief description</th>
+            <th style="width:20%">选项</th>
+            <th>说明</th>
         </tr>
         <tr>
             <th colspan="2">Input options</th>
         </tr>
         <tr>
-            <td colspan="2">By default, LAME accepts a PCM audio sample inside a .WAV
-                container as the input file, in 8, 16, 24 and 32 bits integer and in IEEE FLOAT.
-                If it is compiled with <a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a>,
-                then it also supports the extra formats that the library supports.<br/>
-                There is also support for RAW PCM data and and piped input
+            <td colspan="2">默认情况下，LAME接受采用8、16、24或32位整型以及IEEE FLOAT作为PCM音频采样数据的.WAV格式输入文件。
+                LAME同样也支持采用 <a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a>编码的其他格式文件。<br/>
+                还支持原始PCM数据和管道输入.
             </td>
         </tr>
         <tr>
             <td>-</td>
-            <td>For piped/streamed Input, use "-" as the input and/or output
-                file name.
-            </td>
+            <td>输入源为管道或者流数据，使用"-" 作为输入或输出文件名.</td>
         </tr>
         <tr>
             <td>--out-dir path</td>
-            <td>If no explicit output file is specified, a file will be written at given path. Ignored when using piped/streamed input</td>
+            <td>如果未指明输出文件，则会在给定路径中写入文件。采用管道或流输作为输入源时忽略该项。</td>
         </tr>
         <tr>
             <td><a href="#mp1input">--mp1input</a><a href="#note1"><sup>1</sup></a></td>
-            <td>Input file is an MPEG
-                layer I file. Implicit if extension is .mp1
-            </td>
+            <td>输入文件是MPEG I层文件。 如果扩展名是.mp1，则隐含。</td>
         </tr>
         <tr>
             <td><a href="#mp2input">--mp2input</a><a href="#note1"><sup>1</sup></a></td>
-            <td>Input file is an MPEG
-                layer II file. Implicit if extension is .mp2
-            </td>
+            <td>输入文件是MPEG II层文件。 如果扩展名是.mp2，则隐含。</td>
         </tr>
         <tr>
             <td><a href="#mp3input">--mp3input</a><a href="#note1"><sup>1</sup></a></td>
-            <td>Input file is an MPEG
-                layer III file. Implicit if extension is .mp3
-            </td>
+            <td>输入文件是MPEG III层文件。 如果扩展名是.mp3，则隐含。</td>
         </tr>
         <tr>
             <td><a href="#scale">--scale</a> number</td>
-            <td>Scale input (multiply PCM data) by number.</td>
+            <td>按number缩放输入数据(乘以PCM数据)。</td>
         </tr>
         <tr>
             <td><a href="#scale-l">--scale-l</a> number</td>
-            <td>Scale channel 0 (left) input (multiply PCM data
-                ) by number
-            </td>
+            <td>按number缩放channel 0 (左声道)输入数据(乘以PCM数据)。</td>
         </tr>
         <tr>
             <td><a href="#scale-r">--scale-r</a> number</td>
-            <td>Scale channel 1 (right) input (multiply PCM data)
-                by number
-            </td>
+            <td>按number缩放(右声道)输入数据(乘以PCM数据)。</td>
         </tr>
         <tr>
             <td><a href="#gain">--gain</a> number</td>
-            <td>apply Gain adjustment in decibels, range -20.0 to +12.0.</td>
+            <td>在[-20.0,+12.0]范围内以分贝为单位进行增益调整。</td>
         </tr>
         <tr>
             <td>--swap-channel</td>
-            <td>Swap Left and Right channels</td>
+            <td>交换左右声道</td>
         </tr>
         <tr>
             <td><a href="#nogap">--nogap</a> file1 file2 ...</td>
-            <td>Gapless encoding for a set of contiguous
-                files
-            </td>
+            <td>无缝编码一组连续的文件。</td>
         </tr>
         <tr>
             <td><a href="#nogapout">--nogapout</a> dir</td>
-            <td>Output dir for gapless encoding (must precede
-                --nogap)
-            </td>
+            <td>无缝编码的输出目录(必须在--nogap之前)。</td>
         </tr>
         <tr>
             <td><a href="#nogaptags">--nogaptags</a></td>
-            <td>Allow the use of VBR tags in gapless encoding</td>
+            <td>允许在无缝编码中使用VBR标记。</td>
         </tr>
         <tr>
             <th colspan="2">Input options for RAW PCM</th>
         </tr>
         <tr>
             <td><a href="#r">-r</a></td>
-            <td>Assume input file is raw PCM.</td>
+            <td>输入文件为原始PCM数据。</td>
         </tr>
         <tr>
             <td><a href="#s">-s</a> number</td>
-            <td>Input sampling frequency in kHz (Default is 44.1Khz)</td>
+            <td>输入源采样率(sample rate)为number kHz (默认44.1Khz)。</td>
         </tr>
         <tr>
             <td><a href="#signed">--signed</a> / <a href="#unsigned">--unsigned</a></td>
-            <td> Input is signed (default) or unsigned</td>
+            <td>输入源数据为有符号(默认)或无符号。</td>
         </tr>
         <tr>
             <td><a href="#bitwidth">--bitwidth</a> w</td>
-            <td> Input bit width is w (default 16)</td>
+            <td>输入位宽为w(默认16)。</td>
         </tr>
         <tr>
             <td><a href="#x">-x</a></td>
-            <td> Force byte-swapping of input stream</td>
+            <td>对输入流进行强制字节交换。</td>
         </tr>
         <tr>
             <td><a href="#little-endian">--little-endian</a> / <a href="#big-endian">--big-endian</a></td>
-            <td> Input is little-endian (default)
-                or big-endian
+            <td>输入源数据为little-endian (默认)或big-endian。
             </td>
         </tr>
         <tr>
             <td><a href="#a">-a</a></td>
-            <td>Downmix from stereo to mono file for mono encoding. Needed with RAW input for the -mm mode to do the downmix.</td>
+            <td>从立体声(stereo)下混音(downmix)到单声道(mono)以进行单声道编码。-mm模式下的RAW输入数据才能进行下混音。</td>
         </tr>
         <tr>
             <th colspan="2">Constant Bit Rate (CBR)</th>
         </tr>
         <tr>
             <td><a href="#b">-b</a>  number</td>
-            <td>Set the bitrate in kbps, default 128 kbps</td>
+            <td>设置比特率(bitrate)为number kbps，默认128kbps。</td>
         </tr>
         <tr>
             <td><a href="#cbr">--cbr</a></td>
-            <td>Enforce use of constant bitrate</td>
+            <td>强制使用恒定比特率(CBR)。</td>
         </tr>
         <tr>
             <td><a href="#comp">--comp</a> ratio</td>
-            <td>Choose bitrate to obtain the specified compression
-                ratio
-            </td>
+            <td>根据指定的压缩率ratio选择比特率。</td>
         </tr>
         <tr>
             <td><a href="#freeformat">--freeformat</a></td>
-            <td>Produce a free format bitstream instead of the 
-                standard one. Supported bitrates between 8 and 640 kbps. Scarce support by
-                decoders.
-            </td>
+            <td>生成自由格式的比特流(bitstream)，而不是标准格式，支持8到640kbps之间的比特率。但解码器提供的支持不足。</td>
         </tr>
         <tr>
             <th colspan="2">Variable Bit Rate (<a href="abr.html">ABR</a>)</th>
         </tr>
         <tr>
             <td><a href="#abr">--abr</a> number</td>
-            <td>Specify average bitrate desired (instead of quality)</td>
+            <td>指定所需的平均比特率(非quality)。</td>
         </tr>
         <tr>
             <th colspan="2">Variable Bit Rate (<a href="vbr.html">VBR</a>)</th>
         </tr>
         <tr>
             <td><a href="#V">-V</a> number</td>
-            <td>Quality setting for VBR.  default number=4.<br/>
-                Decimal values can be specified, like: 4.51<br/>
-                0=highest quality, bigger files. 9.999=lowest quality,
-                smaller files
+            <td>VBR的质量设置。默认number=4.<br/>
+                可以指定Decima类型的值, 如：4.51<br/>
+                0=最高质量，生成的文件较大；<br/>
+                9.999=最低质量，生成的文件较小。
             </td>
         </tr>
         <tr>
             <td><a href="#vbr-old">--vbr-old</a></td>
-            <td>Use old variable bitrate (VBR) routine</td>
+            <td>使用旧的动态比特率(VBR)方案。</td>
         </tr>
         <tr>
             <td><a href="#b">-b</a>  number</td>
-            <td>Specify a minimum allowed bitrate. default 32 kbps (See -F setting below)</td>
+            <td>设置可以接受的最低比特率，默认32 kbps (参见-F选项)。</td>
         </tr>
         <tr>
             <td><a href="#B">-B</a>  number</td>
-            <td>Specify a maximum allowed bitrate. default 320 kbps</td>
+            <td>设置可以接受的最高比特率，默认320 kbps。</td>
         </tr>
         <tr>
             <td><a href="#F">-F</a></td>
-            <td>Enforce -b option for digital silence frames too, rather than encoding them at 8 or 32 kbps.</td>
+            <td>对数字静音帧也使用-b选项，而不是以8或32kbps的比特率进行编码。</td>
         </tr>
         <tr>
             <td><a href="#t">-t</a></td>
-            <td>Disable VBR informational tag</td>
+            <td>禁用VBR信息标记。</td>
         </tr>
         <tr>
             <td><a href="#T">-T</a></td>
-            <td>Enable and force writing LAME Tag</td>
+            <td>启用并强制添加LAME标记。</td>
         </tr>
         <tr>
             <td><a href="#Y">-Y</a></td>
-            <td>Allows -V2, -V1 and -V0 to not to encode the highest frequencies accurately, if doing so causes disproportional increases in bitrate. This is the same that CBR and ABR modes do.</td>
+            <td>允许使用-V2，-V1和-V0选项时不准确地编码最高频率，这样做会导致比特率不成比例的增加。 这与CBR和ABR模式的处理方式相同。</td>
         </tr>
         <tr>
             <th colspan="2">Operational options</th>
         </tr>
         <tr>
             <td><a href="#preset">--preset</a> type</td>
-            <td>Enables some preconfigured settings. Check below
-                for each of the valid values
-            </td>
+            <td>启用一些预设的设置Enables some preconfigured settings. Check below for each of the valid values</td>
         </tr>
         <tr>
             <td><a href="#priority">--priority</a> number</td>
-            <td>Sets the process priority:<br/>
-                0,1 = Low priority <br/>
-                2 = normal priority (default)<br/>
-                3,4 = High priority 
+            <td>设置进程优先级：<br/>
+                0,1 = 低优先级 <br/>
+                2 = 正常(默认)<br/>
+                3,4 = 高优先级。
             </td>
         </tr>
         <tr>
             <td><a href="#flush">--flush</a></td>
-            <td>Flush output stream as soon as possible</td>
+            <td>尽快清空输出流。</td>
         </tr>
         <tr>
             <td><a href="#decode">--decode</a></td>
-            <td>Input=mp3 file, output=wav</td>
+            <td>输入为mp3文件，输出wav文件。</td>
         </tr>
         <tr>
             <td><a href="#decode-mp3delay">--decode-mp3delay</a> samples</td>
-            <td>Set the encoder delay to use to decode 
-                the input .mp3 file
-            </td>
+            <td>设置编码器延迟以用于解码输入的.mp3文件。</td>
         </tr>
         <tr>
             <td><a href="#t_deco">-t</a></td>
-            <td>Disable writing wav header when using --decode</td>
+            <td>使用--decode时禁止写入wav header。</td>
         </tr>
         <tr>
             <td><a href="#noasm">--noasm</a> type</td>
-            <td>Disable assembly optimizations for mmx/3dnow/sse</td>
+            <td>为mmx/3dnow/sse禁用汇编指令优化。</td>
         </tr>
         <tr>
             <th colspan="2">Noise shaping &amp; psycho acoustic algorithms</th>
         </tr>
         <tr>
             <td><a href="#q">-q</a> number</td>
-            <td>number = 0...9.  Default  -q 3<br/>
-                -q 0:  Highest quality, very slow<br/>
-                -q 9:  Poor quality, but fast<br/>
-                Please, see notes in the detailed description
+            <td>number = 0...9.  默认值为3<br/>
+                -q 0:  最高质量，非常慢；<br/>
+                -q 9:  低质量，速度快。<br/>
+                请参阅详细说明。
             </td>
         </tr>
         <tr>
             <td><a href="#m">-m</a> mode</td>
-            <td><b>j</b>oint, <b>s</b>imple, <b>f</b>orce, <b>d</b>ual-mono,
-                <b>m</b>ono, <b>l</b>eft, <b>r</b>ight. default is <b>j</b>.<br/>
-                joint  = joins the best possible of MS and LR stereo<br/>
-                simple = force LR stereo on all frames<br/>
-                force  = force MS stereo on all frames.
+            <td>mode值可为<b>j</b>oint、<b>s</b>imple、<b>f</b>orce、<b>d</b>ual-mono、
+                <b>m</b>ono、<b>l</b>eft、<b>r</b>ight，默认为<b>j</b>.<br/>
+                joint  = 使用MS和LR中最好的立体声模式；<br/>
+                simple = 强制在所有帧上使用LR模式；<br/>
+                force  = 强制在所有帧上使用MS模式。
             </td>
         </tr>
         <tr>
@@ -286,31 +258,31 @@
         </tr>
         <tr>
             <td><a href="#resample">--resample</a> sfreq</td>
-            <td>Sampling frequency of output file(kHz)- 
-                default=automatic
+            <td>输出文件的采样率(kHz)
+                默认自动选择采样率。
             </td>
         </tr>
         <tr>
             <td><a href="#lowpass">--lowpass</a> number</td>
-            <td>Frequency(kHz), lowpass filter cutoff above freq.
-                Range [0.001..50]kHz or [50..50000]Hz
+            <td>频率(kHz)，低通滤波器，过滤掉频率freq以上的数据。
+                范围为[0.001..50]kHz或[50..50000]Hz。
             </td>
         </tr>
         <tr>
             <td><a href="#lowpass">--lowpass</a>-width number</td>
-            <td>Frequency(kHz), lowpass window width. Range [0.001..16]kHz or
-                [16..50000]Hz - (See further restriction in the detailed explanation)
+            <td>频率(kHz)，低通曲线宽度。范围为[0.001..16]kHz或
+                [16..50000]Hz。(限制参见详细介绍)
             </td>
         </tr>
         <tr>
             <td><a href="#highpass">--highpass</a> number</td>
-            <td>Frequency(kHz), highpass filter cutoff below freq.  Range [0.001..16]kHz or
-                [16..50000]Hz (See further restriction in the detailed explanation)
+            <td>频率(kHz)，高通滤波器，过滤掉频率freq以下的数据。范围为[0.001..16]kHz或
+                [16..50000]Hz。(限制参见详细介绍)。
             </td>
         </tr>
         <tr>
             <td><a href="#highpass">--highpass</a>-width number</td>
-            <td>Frequency(kHz), highpass window width - (See further restriction in the detailed explanation)</td>
+            <td>频率(kHz)，高通曲线宽度。(限制参见详细介绍)</td>
         </tr>
         <tr>
             <th colspan="2">ID3 tag Information</th>
@@ -477,7 +449,7 @@
             <td>Shows the complete list of switches</td>
         </tr>
         <tr>
-            <th colspan="2">Experimental switches for developers. Only enabled in alpha/debug 
+            <th colspan="2">Experimental switches for developers. Only enabled in alpha/debug
                 versions. Can change from version to version
             </th>
         </tr>
@@ -630,7 +602,7 @@
         </tr>
         <tr>
             <td>--ogginput</td>
-            <td>No longer supported. Compile with 
+            <td>No longer supported. Compile with
                 <a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a> instead
             </td>
         </tr>
@@ -651,11 +623,11 @@
     <p class="settingtitle">
         <a name="a"><span class="hilight">-a</span></a> Downmix
     </p>
-    <p>  
-        mix the stereo input file to mono and encode as mono.<br/>  
+    <p>
+        mix the stereo input file to mono and encode as mono.<br/>
     </p>
     <p>
-        This option is only needed in the case of raw PCM stereo input 
+        This option is only needed in the case of raw PCM stereo input
         (because LAME cannot determine the number of channels in the input file).
         To encode a stereo PCM input file as mono, use "lame -m m -a"<br/>
     </p>
@@ -668,7 +640,7 @@
     </p>
     <p>
         turns on encoding with a targeted average bitrate of n kbps, allowing
-        to use frames of different sizes.  The allowed range of n is 8...320 
+        to use frames of different sizes.  The allowed range of n is 8...320
         kbps, you can use any integer value within that range.
     </p>
     <p class="settingtitle">
@@ -747,7 +719,7 @@
         16 bits...)
     </p>
     <p class="settingtitle">
-        <a name="c"><span class="hilight">-c</span></a> copyright flag   
+        <a name="c"><span class="hilight">-c</span></a> copyright flag
     </p>
     <p>
         mark the encoded file as copyrighted
@@ -766,18 +738,18 @@
         <a name="clipdetect"><span class="hilight">--clipdetect</span></a> Clipping detection
     </p>
     <p>
-        Enable --replaygain-accurate and print a message whether clipping 
+        Enable --replaygain-accurate and print a message whether clipping
         occurs and how far in dB the waveform is from full scale.
     </p>
     <p>
-        This option is not usable if the MP3 decoder was <b>explicitly</b> disabled 
+        This option is not usable if the MP3 decoder was <b>explicitly</b> disabled
         in the build of LAME.
     </p>
     <p>
         See also: --replaygain-accurate
     </p>
     <p class="settingtitle">
-        <a name="comp"><span class="hilight">--comp x</span></a> Indicate a compression ratio instead of a bitrate 
+        <a name="comp"><span class="hilight">--comp x</span></a> Indicate a compression ratio instead of a bitrate
     </p>
     <p>
         Use this in place of the -b setting if you prefer to indicate a compression ratio (integer value).
@@ -799,7 +771,7 @@
     </p>
     <p class="settingtitle">
         <a name="decode-mp3delay"><span class="hilight">--decode-mp3delay x</span></a> Indicate a different encoder delay
-        for decoding 
+        for decoding
     </p>
     <p>
         When decoding an mp3 file, LAME automatically corrects for the start delay that
@@ -826,12 +798,12 @@
         All this does is set a flag in the bitstream.  If you have a PCM
         input file where one of the above types of (obsolete) emphasis has
         been applied, you can set this flag in LAME.  Then the mp3 decoder
-        should de-emphasize the output during playback, although most 
+        should de-emphasize the output during playback, although most
         decoders ignore this flag.
     </p>
     <p>
         A better solution would be to apply the de-emphasis with a standalone
-        utility before encoding, and then encode without -e.  
+        utility before encoding, and then encode without -e.
     </p>
     <p class="settingtitle">
         <a name="F"><span class="hilight">-F</span></a> Enforce the minimum bitrate
@@ -847,7 +819,7 @@
     <p>
         This setting forces a flush of the data written as soon as the operation has
         finished. This is mostly useful in case of streams. With files, it may degrade
-        performance, since the OS has to write to disk in smaller chunks. 
+        performance, since the OS has to write to disk in smaller chunks.
     </p>
     <p class="settingtitle">
         <a name="freeformat"><span class="hilight">--freeformat</span></a> Encode to freeformat stream
@@ -859,7 +831,7 @@
     </p>
     <p>
         Not supported by most decoders.  Compliant decoders (of which there
-        are few) are only required to support up to 320 kbps.  
+        are few) are only required to support up to 320 kbps.
     </p>
     <p>
         Decoders knwon to handle free format:
@@ -1118,7 +1090,7 @@
         the default setting.
     </p>
     <p class="settingtitle">
-        <a name="longhelp"><span class="hilight">--longhelp</span></a> Shows the detailed help 
+        <a name="longhelp"><span class="hilight">--longhelp</span></a> Shows the detailed help
     </p>
     <p>
         Prints a help page with all of the command-line switches and a brief explanation
@@ -1142,7 +1114,7 @@
     </p>
     <p>
         Specify the width in Hz of the decaying curve of the lowpass. Range [0.001..16]kHz or [16..50000]Hz <br/>
-        The lowpass is in the center of this curve. 
+        The lowpass is in the center of this curve.
         The minimum (and default) width is 75% of a band's width (which is 1/64th of the sample rate).
     </p>
     <p class="settingtitle">
@@ -1185,7 +1157,7 @@
     </p>
     <p>
         FORCED L/R STEREO encodes the left and the right signals independently, and
-        gives more or less bits to each, depending on the currently available. 
+        gives more or less bits to each, depending on the currently available.
     </p>
     <p>
         JOINT STEREO is the default mode of encoding. jstereo means the encoder can use
@@ -1201,7 +1173,7 @@
         described in the ISO documentation.
     </p>
     <p>
-        FORCED MID/SIDE STEREO forces all frames to be encoded with mid/side stereo. It 
+        FORCED MID/SIDE STEREO forces all frames to be encoded with mid/side stereo. It
         should only be used if you are sure every frame of the input file
         has very little stereo seperation.
     </p>
@@ -1217,14 +1189,14 @@
     </p>
     <p>
         Assume the input file is an MP1/2/3 file.  LAME will decode the input file
-        before re-encoding it.  Since MP3 is a lossy format, this is 
+        before re-encoding it.  Since MP3 is a lossy format, this is
         not recommended in general.  But it is useful for creating low bitrate
         mp3s from high bitrate mp3s.  If the filename ends in ".mp3" LAME will assume
         it is an MP3.  For stdin or MP3 files which don't end in .mp3 you need
         to use this switch.
     </p>
     <p class="settingtitle">
-        <a name="noasm"><span class="hilight">--noasm value</span></a> Disables the specified assembler 
+        <a name="noasm"><span class="hilight">--noasm value</span></a> Disables the specified assembler
         instructions
     </p>
     <p>
@@ -1238,7 +1210,7 @@
         files.
     </p>
     <p>
-        Encodes multiple files (ordered by position) which are meant to be played 
+        Encodes multiple files (ordered by position) which are meant to be played
         gaplessly.
     </p>
     <p>
@@ -1247,7 +1219,7 @@
         (as is the case of continuous playback).
     </p>
     <p>
-        This setting solves that by using the samples from the next/previous file to 
+        This setting solves that by using the samples from the next/previous file to
         compute the encoding.
     </p>
     <p class="settingtitle">
@@ -1255,7 +1227,7 @@
         of the files encoded with --nogap
     </p>
     <p>
-        This setting should precede --nogap, and is used to specify the alternate 
+        This setting should precede --nogap, and is used to specify the alternate
         directory where to store the encoded files. The default one is the input file
         directory.
     </p>
@@ -1284,26 +1256,26 @@
         See also: --replaygain-accurate, --replaygain-fast
     </p>
     <p class="settingtitle">
-        <a name="o"><span class="hilight">-o</span></a> non-original   
+        <a name="o"><span class="hilight">-o</span></a> non-original
     </p>
     <p>
         Mark the encoded file as a copy
     </p>
     <p class="settingtitle">
-        <a name="p"><span class="hilight">-p</span></a> CRC error detection  
+        <a name="p"><span class="hilight">-p</span></a> CRC error detection
     </p>
     <p>
         Turn on CRC error protection.
-        It will add a cyclic redundancy check (CRC) code in each frame, allowing to 
-        detect transmission errors that could occur on the MP3 stream. However, it 
+        It will add a cyclic redundancy check (CRC) code in each frame, allowing to
+        detect transmission errors that could occur on the MP3 stream. However, it
         takes 16 bits per frame that would otherwise be used for encoding, and then
         will slightly reduce the sound quality.
     </p>
     <p class="settingtitle">
-        <a name="pad-id3v2"><span class="hilight">--pad-id3v2</span></a> Pad ID3v2 tag.  
+        <a name="pad-id3v2"><span class="hilight">--pad-id3v2</span></a> Pad ID3v2 tag.
     </p>
     <p>
-        Pads the ID3v2 tag with extra 128bytes to allow it to expand. 
+        Pads the ID3v2 tag with extra 128bytes to allow it to expand.
     </p>
     <p class="settingtitle">
         <a name="preset"><span class="hilight">--preset x</span></a> Enable one of the presets
@@ -1391,7 +1363,7 @@
         This can be very useful to avoid the system becoming slow and/or
         unresponsive. By setting LAME to run in a lower priority, you leave
         more time for the system to update basic processing (drawing windows,
-        polling keyboard/mouse, etc). The impact in LAME's performance is 
+        polling keyboard/mouse, etc). The impact in LAME's performance is
         minimal if you use priority 0 to 2.
     </p>
     <p>
@@ -1440,7 +1412,7 @@
         </tbody>
     </table>
     <p>
-        Note that if you call '--priority' without a parameter, then 
+        Note that if you call '--priority' without a parameter, then
         priority 0 will be assumed.
     </p>
     <p class="settingtitle">
@@ -1490,14 +1462,14 @@
         </tr>
     </table>
     <p class="settingtitle">
-        <a name="quiet"><span class="hilight">--quiet</span></a> Don't print any output in the screen  
+        <a name="quiet"><span class="hilight">--quiet</span></a> Don't print any output in the screen
     </p>
     <p>
         Disables the screen output. Useful for job processing or other times where
         screen output is undesirable.
     </p>
     <p class="settingtitle">
-        <a name="r"><span class="hilight">-r</span></a> Input file is raw pcm  
+        <a name="r"><span class="hilight">-r</span></a> Input file is raw pcm
     </p>
     <p>
         Assume the input file is raw pcm.  Sampling rate and mono/stereo
@@ -1517,46 +1489,46 @@
     </p>
     <p>
         ReplayGain analysis does _not_ affect the content of a compressed data
-        stream itself, it is a value stored in the header of a sound file. 
-        Information on the purpose of ReplayGain and the algorithms used is 
+        stream itself, it is a value stored in the header of a sound file.
+        Information on the purpose of ReplayGain and the algorithms used is
         available from http://www.replaygain.org/
     </p>
     <p>
         By default, LAME performs ReplayGain analysis on the input data (after
-        the user-specified volume scaling). This behaviour might give slightly 
-        inaccurate results because the data on the output of a lossy 
-        compression/decompression sequence differs from the initial input data. 
+        the user-specified volume scaling). This behaviour might give slightly
+        inaccurate results because the data on the output of a lossy
+        compression/decompression sequence differs from the initial input data.
         When --replaygain-accurate is specified the mp3 stream gets decoded on
-        the fly and the analysis is performed on the decoded data stream. 
+        the fly and the analysis is performed on the decoded data stream.
         Although theoretically this method gives more accurate results, it has
         several disadvantages:
     </p>
     <ul>
-        <li>tests have shown that the difference between the ReplayGain values 
-            computed on the input data and decoded data is usually no greater 
-            than 0.5dB, although the minimum volume difference the human ear 
+        <li>tests have shown that the difference between the ReplayGain values
+            computed on the input data and decoded data is usually no greater
+            than 0.5dB, although the minimum volume difference the human ear
             can perceive is about 1.0dB
         </li>
         <li>decoding on the fly significantly slows down the encoding process</li>
     </ul>
     The apparent advantage is that:
     <ul>
-        <li> with --replaygain-accurate the peak sample is determined and 
+        <li> with --replaygain-accurate the peak sample is determined and
             stored in the file. The knowledge of the peak sample can be useful
             to decoders (players) to prevent a negative effect called 'clipping'
             that introduces distortion into sound.
         </li>
     </ul>
-    <p>    
-        Only the "Radio" ReplayGain value is computed. It is stored in the LAME tag. 
-        The analysis is performed with the reference volume equal to 89dB. 
+    <p>
+        Only the "Radio" ReplayGain value is computed. It is stored in the LAME tag.
+        The analysis is performed with the reference volume equal to 89dB.
         Note: the reference volume has been changed from 83dB on transition
         from version 3.95 to 3.95.1.
     </p>
     <p>
-        This option is not usable if the MP3 decoder was _explicitly_ disabled 
-        in the build of LAME. (Note: if LAME is compiled without the MP3 decoder, 
-        ReplayGain analysis is performed on the input data after user-specified 
+        This option is not usable if the MP3 decoder was _explicitly_ disabled
+        in the build of LAME. (Note: if LAME is compiled without the MP3 decoder,
+        ReplayGain analysis is performed on the input data after user-specified
         volume scaling).
     </p>
     <p>
@@ -1571,13 +1543,13 @@
     </p>
     <p>
         ReplayGain analysis does _not_ affect the content of a compressed data
-        stream itself, it is a value stored in the header of a sound file. 
-        Information on the purpose of ReplayGain and the algorithms used is 
+        stream itself, it is a value stored in the header of a sound file.
+        Information on the purpose of ReplayGain and the algorithms used is
         available from http://www.replaygain.org/
     </p>
     <p>
-        Only the "Radio" ReplayGain value is computed. It is stored in the LAME tag. 
-        The analysis is performed with the reference volume equal to 89dB. 
+        Only the "Radio" ReplayGain value is computed. It is stored in the LAME tag.
+        The analysis is performed with the reference volume equal to 89dB.
         Note: the reference volume has been changed from 83dB on transition
         from version 3.95 to 3.95.1.
     </p>
@@ -1594,10 +1566,10 @@
         where n = 8, 11.025, 12, 16, 22.05, 24, 32, 44.1, 48
     </p>
     <p>
-        Output sampling frequency.  Resample the input if necessary.  
+        Output sampling frequency.  Resample the input if necessary.
     </p>
     <p>
-        If not specified, LAME may sometimes resample automatically 
+        If not specified, LAME may sometimes resample automatically
         when faced with extreme compression conditions (like encoding
         a 44.1 kHz input file at 32 kbps).  To disable this automatic
         resampling, you have to use --resample to set the output sample rate
@@ -1634,34 +1606,34 @@
     </p>
     <p>
         Use with care, since most MP3 decoders will truncate data
-        which decodes to values greater than 32768.  
+        which decodes to values greater than 32768.
     </p>
     <p>
         The <i>l</i> and <i>r</i> variants apply the scaling only to left (channel 0) or right
         (channel 1) respectively.
     </p>
     <p class="settingtitle">
-        <a name="signed"><span class="hilight">--signed</span></a> Input RAW uses signed values   
+        <a name="signed"><span class="hilight">--signed</span></a> Input RAW uses signed values
     </p>
     <p>
         Use with RAW pcm to indicate if the data is signed (values centered at zero) or
         unsigned (all positive values). This is the default value.
     </p>
     <p class="settingtitle">
-        <a name="silent"><span class="hilight">--silent</span></a> Don't print any output in the screen  
+        <a name="silent"><span class="hilight">--silent</span></a> Don't print any output in the screen
     </p>
     <p>
         Disables the screen output. Useful for job processing or other times where
         screen output is undesirable.
     </p>
     <p class="settingtitle">
-        <a name="space-id3v1"><span class="hilight">--space-id3v1</span></a> Use spaces for padding.  
+        <a name="space-id3v1"><span class="hilight">--space-id3v1</span></a> Use spaces for padding.
     </p>
     <p>
         Use spaces instead of null values for padding data in an ID3v1 tag.
     </p>
     <p class="settingtitle">
-        <a name="strictly-enforce-ISO"><span class="hilight">--strictly-enforce-ISO</span></a> Strict ISO compliance   
+        <a name="strictly-enforce-ISO"><span class="hilight">--strictly-enforce-ISO</span></a> Strict ISO compliance
     </p>
     <p>
         With this option, LAME will enforce the 7680 bit limitation on
@@ -1669,28 +1641,28 @@
         high bitrate encodings. Some decoders need it.
     </p>
     <p class="settingtitle">
-        <a name="t"><span class="hilight">-t</span></a> Disable VBR tag or disable WAV header            
+        <a name="t"><span class="hilight">-t</span></a> Disable VBR tag or disable WAV header
     </p>
     <p>This setting has two different uses:</p>
     <p>
         When encoding to VBR, this setting disables writing the VBR Tag (also known as XING tag).
-        This tag is embedded by default in the frame 0 of the MP3 file. It lets VBR aware players 
+        This tag is embedded by default in the frame 0 of the MP3 file. It lets VBR aware players
         to correctly seek and compute playing times in such files.<br/>
     </p>
     <p>
-        When decoding MP3 to WAV using --decode, this flag will 
+        When decoding MP3 to WAV using --decode, this flag will
         disable writing the WAV header.  The output will be raw pcm,
         native endian format.  Use -x to swap bytes.
     </p>
     <p class="settingtitle">
-        <a name="T"><span class="hilight">-T</span></a> Force the usage of the LAME tag            
+        <a name="T"><span class="hilight">-T</span></a> Force the usage of the LAME tag
     </p>
     <p>
         By default, LAME already adds a LAME tag when encoding.
         This setting overrides the -t setting, and implies --nogaptags.
     </p>
     <p class="settingtitle">
-        <a name="unsigned"><span class="hilight">--unsigned</span></a> Input RAW uses unsigned values   
+        <a name="unsigned"><span class="hilight">--unsigned</span></a> Input RAW uses unsigned values
     </p>
     <p>
         Use with RAW pcm to indicate if the data is signed (values centered at zero) or
@@ -1741,8 +1713,8 @@
     </table>
     </p>
     <p>
-        Using -V 7 or higher (lower quality) is not recommended.  
-        ABR usually produces better results.  
+        Using -V 7 or higher (lower quality) is not recommended.
+        ABR usually produces better results.
     </p>
     <p class="settingtitle">
         <a name="vbr-old"><span class="hilight">--vbr-old</span></a> Uses the old VBR method of encoding
@@ -1754,7 +1726,7 @@
         <a name="verbose"><span class="hilight">--verbose</span></a>Program verbosity
     </p>
     <p>
-        Print a lot of information on screen. 
+        Print a lot of information on screen.
     </p>
     <p class="settingtitle">
         <a name="version"><span class="hilight">--version</span></a> Prints the license page
@@ -1808,7 +1780,7 @@
 
 <p>HTML markup and design by <a
 href="http://www.rarewares.org" target="_blank">Roberto Amorim</a> and <a
-href="http://www.maresweb.de" target="_blank">Sebastian Mares</a>. Logo by <a 
+href="http://www.maresweb.de" target="_blank">Sebastian Mares</a>. Logo by <a
 href="http://www.brightercreative.co.uk">Sam Fisher</a>.</p>
 
 </div>
