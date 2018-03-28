@@ -131,7 +131,8 @@
         </tr>
         <tr>
             <td><a href="#a">-a</a></td>
-            <td>从立体声(stereo)下混音(downmix)到单声道(mono)以进行单声道编码。-mm模式下的RAW输入数据才能进行下混音。</td>
+            <td>从立体声(stereo)下混音(downmix)到单声道(mono)以进行单声道编码。
+              -mm模式下的RAW输入数据才能进行下混音。</td>
         </tr>
         <tr>
             <th colspan="2">Constant Bit Rate (CBR)</th>
@@ -150,7 +151,8 @@
         </tr>
         <tr>
             <td><a href="#freeformat">--freeformat</a></td>
-            <td>生成自由格式的比特流(bitstream)，而不是标准格式，支持8到640kbps之间的比特率。但解码器提供的支持不足。</td>
+            <td>生成自由格式的比特流(bitstream)，而不是标准格式，
+              支持8到640kbps之间的比特率。但解码器提供的支持不足。</td>
         </tr>
         <tr>
             <th colspan="2">Variable Bit Rate (<a href="abr.html">ABR</a>)</th>
@@ -196,7 +198,8 @@
         </tr>
         <tr>
             <td><a href="#Y">-Y</a></td>
-            <td>允许使用-V2，-V1和-V0选项时不准确地编码最高频率，这样做会导致比特率不成比例的增加。 这与CBR和ABR模式的处理方式相同。</td>
+            <td>允许使用-V2，-V1和-V0选项时不准确地编码最高频率，这样做会导致
+              比特率不成比例的增加。 这与CBR和ABR模式的处理方式相同。</td>
         </tr>
         <tr>
             <th colspan="2">Operational options</th>
@@ -276,8 +279,8 @@
         </tr>
         <tr>
             <td><a href="#highpass">--highpass</a> number</td>
-            <td>频率(kHz)，高通滤波器，过滤掉频率freq以下的数据。范围为[0.001..16]kHz或
-                [16..50000]Hz。(限制参见详细介绍)。
+            <td>频率(kHz)，高通滤波器，过滤掉频率freq以下的数据。
+              范围为[0.001..16]kHz或[16..50000]Hz。(限制参见详细介绍)。
             </td>
         </tr>
         <tr>
@@ -289,86 +292,85 @@
         </tr>
         <tr>
             <td><a href="#tt">--tt</a> title</td>
-            <td>Audio/song title (max 30 chars for version 1 tag)</td>
+            <td>音频或歌曲的标题（v1最多30个字符）。</td>
         </tr>
         <tr>
             <td><a href="#ta">--ta</a> artist</td>
-            <td>Audio/song artist (max 30 chars for version 1 tag)</td>
+            <td>音频或歌曲的艺术家（v1最多30个字符）。</td>
         </tr>
         <tr>
             <td><a href="#tl">--tl</a> album</td>
-            <td>Audio/song album (max 30 chars for version 1 tag)</td>
+            <td>音频或歌曲的专辑（v1最多30个字符）。</td>
         </tr>
         <tr>
             <td><a href="#ty">--ty</a> year</td>
-            <td>Audio/song year of issue (1 to 9999)</td>
+            <td>音频或歌曲的发型时间（1到9999）。</td>
         </tr>
         <tr>
             <td><a href="#tc">--tc</a> comment</td>
-            <td>User-defined text (max 30 chars for v1 tag, 28 for v1.1)</td>
+            <td>用户定义的文本（v1最多30个字符，v1.1最多28个字符）。</td>
         </tr>
         <tr>
             <td><a href="#tn">--tn</a> track[/total]</td>
-            <td>Audio/song track number and (optionally) the total
-                number of tracks on the original recording.<br/> (track
-                and total each 1 to 255. just the track number
-                creates v1.1 tag, providing a total forces v2.0).
+            <td>音频或歌曲的音轨编号和原始录音中音轨的总数（可选）。<br/>
+              （音轨编号和总数都是从1到255之间的值。不过音轨编号需要创建v1.1的tag，
+              而音轨总数则强制创建v2.0的tag）。
             </td>
         </tr>
         <tr>
             <td><a href="#tg">--tg</a> genre</td>
-            <td>Audio/song genre (name or number in list)</td>
+            <td>音频或歌曲的类型（<a href="#genre-list">列表</a>中的名称或编号）。</td>
         </tr>
         <tr>
             <td><a href="#ti">--ti</a> file</td>
-            <td>Audio/song albumArt (jpeg/png/gif file, 128KB max, v2.3)</td>
+            <td>音频或歌曲的专辑封面（jpeg/png/gif文件，最大128KB，v2.3）。</td>
         </tr>
         <tr>
             <td><a href="#tv">--tv</a> id=value</td>
-            <td>Text or URL frame specified by id and value (v2.3 tag). User defined frame. Syntax: --tv "TXXX=description=content"</td>
+            <td>由id和value（v2.3）定义的文本或URL帧。用户自定义帧。语法：--tv "TXXX=description=content"</td>
         </tr>
         <tr>
             <td><a href="#add-id3v2">--add-id3v2</a></td>
-            <td>Force addition of version 2 tag</td>
+            <td>强制添加v2的标签。</td>
         </tr>
         <tr>
             <td><a href="#id3v1-only">--id3v1-only</a></td>
-            <td>Add only a version 1 tag</td>
+            <td>只添加v1的标签。</td>
         </tr>
         <tr>
             <td><a href="#id3v2-only">--id3v2-only</a></td>
-            <td>Add only a version 2 tag</td>
+            <td>只添加v2的标签。</td>
         </tr>
         <tr>
             <td><a href="#id3v2-latin1">--id3v2-latin1</a></td>
-            <td>Add following options in ISO-8859-1 text encoding</td>
+            <td>以ISO-8859-1编码添加以下选项。</td>
         </tr>
         <tr>
             <td><a href="#id3v2-utf16">--id3v2-utf16</a></td>
-            <td>Add following options in unicode text encoding</td>
+            <td>以unicode编码添加以下选项。</td>
         </tr>
         <tr>
             <td><a href="#space-id3v1">--space-id3v1</a></td>
-            <td>Pad version 1 tag with spaces instead of nulls</td>
+            <td>使用空格而不是空值来填充v1标记。</td>
         </tr>
         <tr>
             <td><a href="#pad-id3v2-size">--pad-id3v2-size</a> n</td>
-            <td>Adds ID3v2 tag with n padding bytes</td>
+            <td>为ID3v2标签添加n个字节的padding。</td>
         </tr>
         <tr>
             <td><a href="#genre-list">--genre-list</a></td>
-            <td>Print alphabetically sorted ID3 genre list and exit</td>
+            <td>按字母顺序排序打印ID3流派列表并退出。</td>
         </tr>
         <tr>
             <td><a href="#ignore-tag-errors">--ignore-tag-errors</a></td>
-            <td>Ignore errors in values passed for tags</td>
+            <td>忽略传入的标签值中的错误。</td>
         </tr>
         <tr>
             <td colspan="2">
-                Note: A version 2 tag will NOT be added unless one of the input fields
-                won't fit in a version 1 tag (e.g. the title string is longer than 30
-                characters), or the '--add-id3v2' or '--id3v2-only' options are used,
-                or output is redirected to stdout.
+              注意：如果v1标签不能满足所有的给定的标签值时（如：
+              给定的title长度超过30个字符），或者使用了--add-id3v2
+              或--id3v2-only时，或者输出被重定向到stdout时，
+              v2标签才会被添加。
             </td>
         </tr>
         <tr>
@@ -376,77 +378,70 @@
         </tr>
         <tr>
             <td><a href="#e">-e</a> mode</td>
-            <td>De-emphasis n/5/c  (obsolete)</td>
+            <td>去加重n/5/c（过时）。</td>
         </tr>
         <tr>
             <td><a href="#c">-c</a></td>
-            <td>Mark as copyright</td>
+            <td>标记为版权。</td>
         </tr>
         <tr>
             <td><a href="#o">-o</a></td>
-            <td>Mark as non-original</td>
+            <td>标记为非原创。</td>
         </tr>
         <tr>
             <td><a href="#p">-p</a></td>
-            <td>Error detection.  adds 16 bit checksum to every frame
-                (the checksum is computed correctly)
-            </td>
+            <td>错误检测。每帧添加16位校验和（校验和计算正确）。</td>
         </tr>
         <tr>
             <td><a href="#strictly-enforce-ISO">--strictly-enforce-ISO</a></td>
-            <td>Comply as much as possible to ISO MPEG spec</td>
+            <td>严格遵守ISO MPEG规范。</td>
         </tr>
         <tr>
             <td><a href="#replaygain-fast">--replaygain-fast</a></td>
-            <td>Compute RG fast but slightly inaccurately (default)</td>
+            <td>快速计算RG，但稍微不准确（默认）。</td>
         </tr>
         <tr>
             <td><a href="#replaygain-accurate">--replaygain-accurate</a><a href="#note1"><sup>1</sup></a></td>
-            <td>Compute RG
-                more accurately and find the peak sample
-            </td>
+            <td>更准确地计算RG并找到峰值样本。</td>
         </tr>
         <tr>
             <td><a href="#noreplaygain">--noreplaygain</a></td>
-            <td>Disable ReplayGain analysis</td>
+            <td>禁用回放增益分析。</td>
         </tr>
         <tr>
             <td><a href="#clipdetect">--clipdetect</a><a href="#note1"><sup>1</sup></a></td>
-            <td>Enable
-                --replaygain-accurate and print a message whether
-                clipping occurs and how far the waveform is from full scale
-            </td>
+            <td>启用--replaygain-accurate并打印波形是否发生削减，以及距满刻度有多远。</td>
         </tr>
         <tr>
             <th colspan="2">Verbosity:</th>
         </tr>
         <tr>
             <td><a href="#disptime">--disptime</a> secs</td>
-            <td>Print progress report every secs seconds</td>
+            <td>每秒钟打印一次进度报告。</td>
         </tr>
         <tr>
             <td><a href="#nohist">--nohist</a></td>
-            <td>Disable VBR histogram display</td>
+            <td>禁用VBR直方图显示。</td>
         </tr>
         <tr>
             <td><a href="#silent">--silent</a> / <a href="#quiet">--quiet</a></td>
-            <td>Don't print anything on screen</td>
+            <td>不在屏幕上打印任何东西。</td>
         </tr>
         <tr>
             <td><a href="#verbose">--verbose</a></td>
-            <td>Print a lot of useful information</td>
+            <td>打印详细信息。</td>
         </tr>
         <tr>
             <td><a href="#version">--version</a> / <a href="#license">--license</a></td>
-            <td>Print License information</td>
+            <td>打印许可证信息。</td>
         </tr>
         <tr>
             <td><a href="#help">--help</a> / <a href="#usage">--usage</a></td>
-            <td>Shows the common list of switches. Add <i>id3</i> or <i>dev</i> to get help for a specified topic</td>
+            <td>显示通用选项列表。使用参数id3或dev以获取指定主题的帮助。</td>
         </tr>
         <tr>
             <td><a href="#longhelp">--longhelp</a></td>
-            <td>Shows the complete list of switches</td>
+            <td>显示选项的完整列表。</td>
         </tr>
         <tr>
             <th colspan="2">Experimental switches for developers. Only enabled in alpha/debug
@@ -455,11 +450,11 @@
         </tr>
         <tr>
             <td>--nores</td>
-            <td>Disables the bit reservour. Each frame will become independent from previous ones, but the quality will be lower.</td>
+            <td>禁用缓冲区。每一帧会与前一帧相互独立，但质量会更低。</td>
         </tr>
         <tr>
             <td>--buffer-constraint <i>x</i></td>
-            <td>available values for <i>x</i>: default, strict, maximum</td>
+            <td><i>x</i>可为：default、strict、maximum。</td>
         </tr>
         <tr>
             <td>--noath</td>
@@ -558,65 +553,65 @@
         </tr>
         <tr>
             <td>-f</td>
-            <td>Alias of <a href="#q">-q 7</a>.</td>
+            <td><a href="#q">-q 7</a>的别名。</td>
         </tr>
         <tr>
             <td>-h</td>
-            <td>Alias of <a href="#q">-q 2</a>.</td>
+            <td><a href="#q">-q 2</a>的别名。</td>
         </tr>
         <tr>
             <td>-v</td>
-            <td>Alias of <a href="#V">-V 4</a></td>
+            <td><a href="#V">-V 4</a>的别名。</td>
         </tr>
         <tr>
             <td>-S</td>
-            <td>Alias of <a href="#silent">--silent</a></td>
+            <td><a href="#silent">--silent</a>的别名。</td>
         </tr>
         <tr>
             <td>--alt-preset</td>
-            <td>Alias of <a href="#preset">--preset</a></td>
+            <td><a href="#preset">--preset</a>的别名。</td>
         </tr>
         <tr>
             <td>--r3mix</td>
-            <td>Alias of <a href="#V">-V 3</a></td>
+            <td><a href="#V">-V 3</a>的别名。</td>
         </tr>
         <tr>
             <td>--vbr-mtrh</td>
-            <td>Alias of LAME 3.98 default vbr mode</td>
+            <td>LAME 3.98默认vbr模式的别名。</td>
         </tr>
         <tr>
             <td>--pad-id3v2</td>
-            <td>Alias of <a href="#pad-id3v2-size">--pad-id3v2-size 128</a></td>
+            <td><a href="#pad-id3v2-size">--pad-id3v2-size 128</a>的别名。</td>
         </tr>
         <tr>
             <td>-d</td>
-            <td>No longer supported</td>
+            <td>不再支持。</td>
         </tr>
         <tr>
             <td>-k</td>
-            <td>No longer supported</td>
+            <td>不再支持。</td>
         </tr>
         <tr>
             <td>--cwlimit</td>
-            <td>No longer supported</td>
+            <td>不再支持。</td>
         </tr>
         <tr>
             <td>--ogginput</td>
-            <td>No longer supported. Compile with
-                <a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a> instead
+            <td>不再支持。 改为用
+                <a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a>编译。
             </td>
         </tr>
         <tr>
             <td>--brief</td>
-            <td>Currently unused</td>
+            <td>尚未使用。</td>
         </tr>
         <tr>
             <td>--interch x</td>
-            <td>Currently unused</td>
+            <td>尚未使用。</td>
         </tr>
         <tr>
             <td style="border-bottom:0px;">--nspsytune</td>
-            <td style="border-bottom:0px;">Currently unused</td>
+            <td style="border-bottom:0px;">尚未使用。</td>
         </tr>
     </table>
     <h3>Detailed description in alphabetical order</h3>
